@@ -4,7 +4,15 @@ class MySolution {
   }
 
   binarySearch(nums, target) {
-    // Insert code here;
+     if(nums.length === 0)
+	return false
+    let m = parseInt(nums.length / 2)
+    if (nums[m] === target)
+	return true
+    else if (target < nums[m])
+        return this.binarySearch(nums.slice(0, m), target)
+      else
+        return this.binarySearch(nums.slice(m + 1), target)
   }
 }
 
